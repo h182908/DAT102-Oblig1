@@ -3,7 +3,7 @@ package no.hvl.dat102;
 import java.util.Scanner;
 
 import no.hvl.dat102.adt.FilmarkivADT;
-import no.hvl.data102.klient.Tekstgrensesnitt;
+import no.hvl.dat102.klient.Tekstgrensesnitt;
 
 public class Meny {
 	private Tekstgrensesnitt tekstgr;
