@@ -30,13 +30,19 @@ public class Filmarkiv implements FilmarkivADT {
 
 	@Override
 	public boolean slettFilm(int filmnr) {
-		for(int i = 0; i < antall; i++) {
+		int temp_antall = antall;
+		boolean b = false;
+		
+		for(int i = 0; i < temp_antall; i++) {
 			if(filmTabell[i].getFilmnr() == filmnr) {
-				filmTabell[i] = null;
-				return true;
+				filmTabell[i] = filmTabell[antall - 1];
+				antall = antall - 1;
+				b = true;
 			}
 		}
-		return false;
+		
+		filmTabell = trimTab(filmTabell, antall);
+		return b;
 	}
 
 	@Override
@@ -98,7 +104,15 @@ public class Filmarkiv implements FilmarkivADT {
 		}
 		filmTabell = hjelpetabell;
 	}
-
-
-
+	
+	private Film[] trimTab(Film[] tab, int n) {
+		Film[] filmtab2 = new Film[n];
+		int i = 0;
+		while (i < n) {
+			filmtab2[i] = tab[i];
+			i++;
+		}
+		
+		return filmtab2;
+	}
 }

@@ -54,9 +54,14 @@ public class Meny {
 		    		filma.leggTilFilm(tekstgr.lesFilm(reader));
 		    		break;
 		    	case 7:
-		    		b = false;
+		    		System.out.println("Skriv inn filmnr for film du vil slette: ");
+		    		case_input = reader.nextLine();
+		    		filma.slettFilm(Integer.parseInt(case_input));
 		    		break;
 		    	case 8:
+		    		b = false;
+		    		break;
+		    	case 9:
 		    		options();
 		    		break;
 		    }
